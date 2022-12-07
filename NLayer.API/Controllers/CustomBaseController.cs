@@ -4,12 +4,12 @@ using NLayer.Core.DTOs;
 
 namespace NLayer.API.Controllers
 {
-    //[Route("api/[controller]")]
-    //[ApiController]
+    [Route("api/[controller]")]
+    [ApiController]
     public class CustomBaseController : ControllerBase
     {
         [NonAction]
-        public IActionResult CreateActionResault<T>(CustomResponseDto<T> response)
+        public IActionResult CreateActionResult<T>(CustomResponseDto<T> response)
         {
             if (response.StatusCode == 204)
                 return new ObjectResult(null)
